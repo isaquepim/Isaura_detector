@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Detector de Fake News</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='flatly.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<div class="container-fluid" id="wrapper">
+			
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-4" id="content">
+					<h2>Detector de FakeNews Isaura</h2>
+                    <h3>Desenvolvido por Isaque Pim e Laura Chaves para a disciplina de Aquisição e Manipulação de Dados.
+                        Para mais informações sobre as técnicas utilizadas acesse o link LINK. Insira uma notícia de pelo menos 100
+                        palavras
+                    </h3>
+					
+					<form action="{{ url_for('get_text') }}" method="POST" role="form">
+					
+						<div class="form-group">
+							<div class="input-group">
+							  <input name="get_text" type="text" class="form-control" placeholder="Insira sua notícia" aria-label="Todo" aria-describedby="add-btn">
+							  <span class="input-group-btn">
+								  <button type="submit" class="btn btn-default" id="add-btn">Verificar</button>
+							  </span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<footer>
+				<div class="row pad">
+					<div class="col-lg-12 text-center">
+						Copyright &copy; 2021 <strong>Isaura Detector</strong>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
